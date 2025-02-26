@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html data-bs-theme="auto" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Jenn's Interactive CV</title>
+    <meta name="description" content="This is the professional profile and interactive resume of Jennifer Barhoum.">
+    <meta name="twitter:description" content="This is the interactive professional profile of Jennifer Barhoum.">
+    <meta name="twitter:image" content="https://www.jennbarhoum.online/assets/img/jb-logo.png">
+    <meta name="twitter:title" content="Jenn's Interactive CV">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:image" content="https://www.jennbarhoum.online/assets/img/jb-logo.png">
+    <meta property="og:type" content="website">
+    <script>
+        (function() {
+
+            // JavaScript snippet handling Dark/Light mode switching
+
+            const getStoredTheme = () => localStorage.getItem('theme');
+            const setStoredTheme = theme => localStorage.setItem('theme', theme);
+            const forcedTheme = document.documentElement.getAttribute('data-bss-forced-theme');
+
+            const getPreferredTheme = () => {
+
+                if (forcedTheme) return forcedTheme;
+
+                const storedTheme = getStoredTheme();
+                if (storedTheme) {
+                    return storedTheme;
+                }
+
+                const pageTheme = document.documentElement.getAttribute('data-bs-theme');
+
+                if (pageTheme) {
+                    return pageTheme;
+                }
+
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+
+            const setTheme = theme => {
+                if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.setAttribute('data-bs-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-bs-theme', theme);
+                }
+            }
+
+            setTheme(getPreferredTheme());
+
+            const showActiveTheme = (theme, focus = false) => {
+                const themeSwitchers = [].slice.call(document.querySelectorAll('.theme-switcher'));
+
+                if (!themeSwitchers.length) return;
+
+                document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                    element.classList.remove('active');
+                    element.setAttribute('aria-pressed', 'false');
+                });
+
+                for (const themeSwitcher of themeSwitchers) {
+
+                    const btnToActivate = themeSwitcher.querySelector('[data-bs-theme-value="' + theme + '"]');
+
+                    if (btnToActivate) {
+                        btnToActivate.classList.add('active');
+                        btnToActivate.setAttribute('aria-pressed', 'true');
+                    }
+                }
+            }
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                const storedTheme = getStoredTheme();
+                if (storedTheme !== 'light' && storedTheme !== 'dark') {
+                    setTheme(getPreferredTheme());
+                }
+            });
+
+            window.addEventListener('DOMContentLoaded', () => {
+                showActiveTheme(getPreferredTheme());
+
+                document.querySelectorAll('[data-bs-theme-value]')
+                    .forEach(toggle => {
+                        toggle.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            const theme = toggle.getAttribute('data-bs-theme-value');
+                            setStoredTheme(theme);
+                            setTheme(theme);
+                            showActiveTheme(theme);
+                        })
+                    })
+            });
+        })();
+    </script>
+    <link rel="icon" type="image/png" sizes="850x868" href="assets/img/jb-logo.png">
+    <link rel="icon" type="image/png" sizes="850x868" href="assets/img/jb-logo.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" sizes="850x868" href="assets/img/jb-logo.png">
+    <link rel="icon" type="image/png" sizes="850x868" href="assets/img/jb-logo.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" sizes="850x868" href="assets/img/jb-logo.png">
+    <link rel="icon" type="image/png" sizes="850x868" href="assets/img/jb-logo.png">
+    <link rel="icon" type="image/png" sizes="850x868" href="assets/img/jb-logo.png">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ADLaM+Display&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Advent+Pro&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/swiper-icons.css">
+    <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
+    <link rel="stylesheet" href="assets/css/aos.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/vendor/aos/aos.css">
+    <link rel="stylesheet" href="assets/css/vendor/glightbox/css/glightbox.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setCookieDomain", "*.jennbarhoum.online"]);
+  _paq.push(["setDomains", ["*.jennbarhoum.online","*.jennbarhoum.online","*.www.jennbarhoum.online","*.www.jennbarhoum.online"]]);
+  _paq.push(["enableCrossDomainLinking"]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://matomo.joeyq.tech/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '14']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img referrerpolicy="no-referrer-when-downgrade" src="https://matomo.joeyq.tech/matomo.php?idsite=14&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Matomo Code -->
+
+<script defer data-domain="jennbarhoum.online" src="https://plausible.joeyq.tech/js/script.file-downloads.hash.outbound-links.pageview-props.tagged-events.js"></script>
+
+				
+<!-- Start Open Web Analytics Tracker -->
+<script type="text/javascript">
+//<![CDATA[
+var owa_baseUrl = 'https://owa.joeyq.tech/';
+var owa_cmds = owa_cmds || [];
+owa_cmds.push(['setSiteId', 'f175f82408f8aedd95b73996caad6102']);
+owa_cmds.push(['trackPageView']);
+owa_cmds.push(['trackClicks']);
+owa_cmds.push(['trackDomStream']);
+
+(function() {
+	var _owa = document.createElement('script'); _owa.type = 'text/javascript'; _owa.async = true;
+	owa_baseUrl = ('https:' == document.location.protocol ? window.owa_baseSecUrl || owa_baseUrl.replace(/http:/, 'https:') : owa_baseUrl );
+	_owa.src = owa_baseUrl + 'modules/base/js/owa.tracker-combined-min.js';
+	var _owa_s = document.getElementsByTagName('script')[0]; _owa_s.parentNode.insertBefore(_owa, _owa_s);
+}());
+//]]>
+</script>
+<!-- End Open Web Analytics Code -->
+</head>
+
+<body class="index-page"><header id="header" class="header d-flex flex-column justify-content-center">
+
+  <i class="header-toggle d-xl-none bi bi-list"></i>
+
+  <nav id="navmenu" class="navmenu">
+    <ul>
+      <li><a href="index.html#hero" class="active"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
+      <li><a href="index.html#about"><i class="bi bi-person navicon"></i><span>About</span></a></li>
+      <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
+      <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i><span>Contact</span></a></li>
+      <li><a href="jam.html"><i class="bi bi-music-note navicon"></i><span>Jenn Jam</span></a></li>
+    </ul>
+  </nav>
+
+</header>
+    <main class="main">
+        <section id="skills" class="skills section pt-4">
+            <div class="container section-title mb-0 pb-3" data-aos="fade-up">
+                <h2 class="neon-glow" style="color: rgb(62,58,58);font-family: 'ADLaM Display', serif;font-size: 41px;">Studio Jenn Jam</h2>
+            </div>
+            <div class="container-fluid mt-0 pt-0" data-aos="fade-up" data-aos-delay="100">
+                <div class="row skills-content skills-animation mt-2 pt-0">
+                    <div class="col-lg-6 col-xxl-7 offset-xxl-3 mt-5 pt-0" style="width: 490.971px;text-align: justify;">
+                        <div class="progress" style="height: 100%;width: 486.976px;">
+                            <h3 style="height: 100%;width: 447.675px;font-size: 20px;text-align: left;" class="mt-0 me-4 ps-0 ms-0 pe-4">The Jenn-Jam AI Beatbox is a fun, <strong><span style="color: rgb(255, 134, 219);">AI-powered music tool </span></strong>inspired by <strong><em><span style="color: rgb(255, 255, 255); background-color: rgb(96, 106, 116);">Yamaha’s Tenori-on</span></em></strong><span style="color: rgb(255, 255, 255); background-color: rgb(96, 106, 116);">.</span> It lets you create beats by switching between drum and synth sounds. Just draw a pattern on the grid sequencer using your mouse and just <strong><span style="color: rgb(255, 134, 219);">groove on baby</span>. </strong><br><br>The <strong><span style="color: rgb(255, 134, 219);">AI</span></strong> is trained on 10000+ hours of different music styles and genres, allowing the magic of <strong><span style="color: rgb(255, 134, 219);">Machine Learning</span></strong> to "improvise" synth and drum grooves patterns allowing you to <strong><em><span style="color: rgb(255, 255, 255); background-color: rgb(96, 106, 116);">jam for hours</span>.</em></strong> Get an inspirational head start by clicking "Load ML (~10MB).<br><br>Speed up or slow down the groove pattern to generate <strong><em><span style="color: rgb(255, 255, 255); background-color: rgb(96, 106, 116);">different musical styles</span></em></strong>, and switch between your patterns using the <strong><span style="color: rgb(255, 134, 219);">5 sample banks</span></strong>.&nbsp;</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-3 offset-0 offset-xxl-0 pb-0 pt-0 mt-0 mb-0" style="width: 566.765px;">
+                        <div class="progress mt-0" style="height: 798px;background: transparent;width: 416.776px;">
+                            <div class="glitch-embed-wrap mt-0 pt-0 ms-0 pe-0 me-5" style="height: 848px;width: 100%;"><iframe
+  allow="geolocation; microphone; camera; midi; encrypted-media"
+  src="https://gem-achieved-ocean.glitch.me/"
+  alt="gem-achieved-ocean on Glitch"
+  style="height: 100%; width: 100%; border: 0;">
+</iframe><iframe
+  allow="geolocation; microphone; camera; midi; encrypted-media"
+  src="https://gem-achieved-ocean.glitch.me/"
+  alt="gem-achieved-ocean on Glitch"
+  style="height: 100%; width: 100%; border: 0;">
+</iframe></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer" class="footer position-relative light-background" style="background: rgb(0,0,0);">
+        <div class="container">
+            <div class="d-flex justify-content-center social-links"><a href="https://x.com/JBarhoum" target="_blank" style="background: #04cd54;color: rgb(0,0,0);"><i class="bi bi-twitter-x"></i></a><a href="https://www.facebook.com/jennifer.barhoum" target="_blank" style="background: #04cd54;color: rgb(0,0,0);"><i class="bi bi-facebook"></i></a><a href="https://www.instagram.com/jenueness/" style="color: rgb(0,0,0);background: #04cd54;"><i class="bi bi-instagram"></i></a><a href="https://jennifer-barhoum.medium.com/" target="_blank" style="background: #04cd54;color: rgb(0,0,0);"><i class="bi bi-medium"></i></a><a href="https://www.linkedin.com/in/jennifer-barhoum-159a6646/" target="_blank" style="color: rgb(0,0,0);background: #04cd54;"><i class="bi bi-linkedin"></i></a></div>
+            <div class="container">
+                <div class="copyright"><span>Copyright</span><strong class="px-1 sitename">Jennifer Barhoum</strong><span>All Rights Reserved</span></div>
+            </div>
+        </div>
+    </footer><a class="d-flex justify-content-center align-items-center scroll-top" href="#" id="scroll-top" style="background: #04cd54;"><i class="bi bi-arrow-up-short"></i></a>
+    <div id="preloader"></div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/aos.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/vendor/php-email-form/validate.js"></script>
+    <script src="assets/js/vendor/aos/aos.js"></script>
+    <script src="assets/js/vendor/typed.js/typed.umd.js"></script>
+    <script src="assets/js/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/js/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/js/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/js/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/js/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/js/js/main.js"></script>
+</body>
+
+</html>

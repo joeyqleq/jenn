@@ -1,0 +1,10 @@
+:root, [data-bs-theme=light] {
+  --bs-body-bg: #bf3232;
+  --bs-body-bg-rgb: 191,50,50;
+  --bs-secondary-bg: #154371;
+  --bs-secondary-bg-rgb: 21,67,113;
+  --bs-tertiary-bg: #0e3e6d;
+  --bs-tertiary-bg-rgb: 14,62,109;
+  --bs-body-font-family: 'Advent Pro', sans-serif;
+}
+
